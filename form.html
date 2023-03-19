@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>Exporing your Colors</title>
-        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/styleForm.css">
     </head>
     <body>
         
         <form>
-            <div class="box">
+            <div class = "explanation">
                 <label for ="name">Name:</label>
                 <input type="text" name="name" id="name"></input>
                 <h1>Exporing Your Colors</h1>
@@ -22,7 +22,7 @@
                     Use the sentences below to describe your personality.
                 </a></p>
             </div>
-            <div class="box">
+            <div  class="box">
                 <p>1. When I make decisions:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q1" value="a">
@@ -44,7 +44,7 @@
                     I take it seriously and always try to make the right decision.
                 </label>
             </div>
-		    <div class="box">
+		    <div class="box"  style="display:none">
                 <p>2. The best way for others to show me they care about me is to:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q2" value="a">
@@ -66,7 +66,7 @@
                     Do what I want to do; not let me down or go back on their word.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>3. When I’m with my friends, I like to provide:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q3" value="a">
@@ -88,7 +88,7 @@
                     The planning; a sense of security; a good standard.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>4. I like to:</p>
                 <label>
                     <input type = "number" min = "1" max = "4" name="q4" value="a">
@@ -110,7 +110,7 @@
                     d. Be responsible, dependable, and helpful to others.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>5. One thing I am really good at is:</p>
                 <label>
                     <input type = "number" min = "1" max = "4" name="q5" value="a">
@@ -132,7 +132,7 @@
                     d. Organizing.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>6. Friends who know me best would say that I am:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q6" value="a">
@@ -154,7 +154,7 @@
                     d. Neat, prepared.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>7. My basic approach to life is:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q7" value="a">
@@ -176,7 +176,7 @@
                     d. To plan for the future and make it as good as possible.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>8. When I am feeling discouraged or “down in the dumps”:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q8" value="a">
@@ -198,7 +198,7 @@
                     d. I try to figure out what’s causing the problem and fix it.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>9. I feel good about myself when:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q9" value="a">
@@ -220,7 +220,7 @@
                     d. I am appreciated or rewarded for things I do
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>10. Teachers at school who saw me when I wasn’t on my best behavior might describe me as:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q10" value="a">
@@ -242,7 +242,7 @@
                     d. Someone who wants things my way; dominant; worrying.
                 </label>
             </div>
-            <div class = "box">
+            <div class = "box"  style="display:none">
                 <p>11. Teachers at school (who like me and in whose class I do pretty well) would probably describe me as:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q11" value="a">
@@ -264,9 +264,25 @@
                     d. Neat, organized, prepared, someone who does assignments and is a good student.
                 </label>
             </div>
+            <button id = "submitBTN" type="submit">Submit</button>
         </form>
-        <sript>
+        <script type="text/javascript">
+            const questions = document.querySelectorAll(".box");
 
-        </sript>
+            document.querySelector("form").addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const currentQuestion = document.querySelector(".box:not([style='display:none'])");
+
+                currentQuestion.style.display = "none";
+
+                const nextQuestion = currentQuestion.nextElementSibling;
+                if(nextQuestion){
+                    nextQuestion.style.display = "block";
+                }else{
+                    e.target.submit();
+                }
+            });
+        </script>  
     </body>
 </html> 
