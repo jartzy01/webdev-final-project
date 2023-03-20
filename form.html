@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <title>Exporing your Colors</title>
         <link rel="stylesheet" href="CSS/styleForm.css">
+        <script src="/JS/js-Form.js"></script>
     </head>
-    <body>
-        
+    <body></body>    
         <form>
             <div class = "explanation">
                 <label for ="name">Name:</label>
@@ -265,24 +265,6 @@
                 </label>
             </div>
             <button id = "submitBTN" type="submit">Submit</button>
-        </form>
-        <script type="text/javascript">
-            const questions = document.querySelectorAll(".box");
-
-            document.querySelector("form").addEventListener("submit", (e) => {
-                e.preventDefault();
-
-                const currentQuestion = document.querySelector(".box:not([style='display:none'])");
-
-                currentQuestion.style.display = "none";
-
-                const nextQuestion = currentQuestion.nextElementSibling;
-                if(nextQuestion){
-                    nextQuestion.style.display = "block";
-                }else{
-                    e.target.submit();
-                }
-            });
-        </script>  
+        </form>  
     </body>
 </html> 
