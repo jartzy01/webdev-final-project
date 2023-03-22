@@ -1,15 +1,11 @@
-* {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
+
 html, body {
     height: 100%;
 }
 form{
+    width: 800px;
+    height: 500px;
     border: 5px solid;
-    border-radius: 100px;
-    padding-left: 100px;
-    padding-right: 100px;
 }
 
 body {
@@ -20,10 +16,9 @@ body {
     position: relative;
     background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
     font-family: 'Roboto', helvetica, arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 body:before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -39,11 +34,27 @@ body:before {
     
 }
 .box{
-    padding-top: 50px;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-top: 10px;
+    padding-left: 14%;
+    padding-right: 14%;
 }
 #submitBTN {
-    margin-left: 15%;
-    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+.btn{
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-bottom: 5%;   
+}
+
+input:invalid + span::after {
+    content: "✖";
+    padding-left: 5px;
+}
+
+input:valid + span::after {
+    content: "✓";
+    padding-left: 5px;
 }
