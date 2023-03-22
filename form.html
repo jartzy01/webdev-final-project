@@ -5,7 +5,7 @@
         <title>Exporing your Colors</title>
         <link rel="stylesheet" href="CSS/styleForm.css">
         <script src="\JS\js-Form.js"></script>
-	<script src="\JS\uniqueValue.js"></script>
+        <script src="\JS\uniqueValue.js"></script>
     </head>
     <body></body>    
         <form>
@@ -26,26 +26,26 @@
             <div  class="box">
                 <p>1. When I make decisions:</p>
                 <label>
-                    <input type="number" min = "1" max = "4" name="q1" value="a">
+                    <input type="number" min = "1" max = "4" name="q1" value="a" required>
                     I do it quickly and go with the first impressions.
                 </label>
                 <br/>
                 <label>
-                    <input type="number" min = "1" max = "4" name="q1" value="b">
+                    <input type="number" min = "1" max = "4" name="q1" value="b" required>
                     I think about it, consider the options and then decide.
                 </label>
                 <br/>
                 <label>
-                    <input type="number" min = "1" max = "4" name="q1" value="c">
+                    <input type="number" min = "1" max = "4" name="q1" value="c" required>
                     I listen to my feelings and consider how my decisions will affect others.
                 </label>
                 <br/>
                 <label>
-                    <input type="number" min = "1" max = "4" name="q1" value="d">
+                    <input type="number" min = "1" max = "4" name="q1" value="d" required>
                     I take it seriously and always try to make the right decision.
                 </label>
-            </div>
-		    <div class="box"  style="display:none">
+                <span class="validity"></span>
+            
                 <p>2. The best way for others to show me they care about me is to:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q2" value="a">
@@ -265,7 +265,8 @@
                     d. Neat, organized, prepared, someone who does assignments and is a good student.
                 </label>
             </div>
-            <button id = "submitBTN" type="submit">Submit</button>
+            
+            <button id="submitBTN" type="submit" name="submit">Submit</button>
         </form>  
     </body>
 </html> 
