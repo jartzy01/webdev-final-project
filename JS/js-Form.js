@@ -1,16 +1,18 @@
-const questions = document.querySelectorAll(".box");
+const buttons = document.querySelectorAll(".back, .next");
 
-document.querySelector("form").addEventListener("submit", (e) => {
-    e.preventDefault();
+buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
 
-    const currentQuestion = document.querySelector(".box:not([style='display:none'])");
+        const currentQuestion = e.target.closest(".box");
+        currentQuestion.style.display = "none";
 
-    currentQuestion.style.display = "none";
+        const nextQuestion = e.target.classList.contains("next")
+            ? currentQuestion.nextElementSibling
+            : currentQuestion.previousElementSibling;
 
-    const nextQuestion = currentQuestion.nextElementSibling;
-    if(nextQuestion){
-        nextQuestion.style.display = "block";
-    }else{
-        e.target.submit();
-    }
+        if (nextQuestion) {
+            nextQuestion.style.display = "block";
+        }
+    });
 });
