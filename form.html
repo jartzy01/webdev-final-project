@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <title>Exporing your Colors</title>
         <link rel="stylesheet" href="CSS/styleForm.css">
-        <script src="\JS\js-Form.js"></script>
-        <script src="\JS\uniqueValue.js"></script>
+        <script src="/JS/js-Form.js"></script>
+        <script src="/JS/uniqueValue.js"></script>
     </head>
-    <body></body>    
+    <body>  
         <form>
             <div class = "explanation">
                 <label for ="name">Name:</label>
@@ -66,6 +66,8 @@
                     <input type="number" min = "1" max = "4" name="q2" value="d">
                     Do what I want to do; not let me down or go back on their word.
                 </label>
+                
+                <button class="next" id="q1">Next</button>
             </div>
             <div class = "box"  style="display:none">
                 <p>3. When I’m with my friends, I like to provide:</p>
@@ -88,8 +90,6 @@
                     <input type="number" min = "1" max = "4" name="q3" value="d">
                     The planning; a sense of security; a good standard.
                 </label>
-            </div>
-            <div class = "box"  style="display:none">
                 <p>4. I like to:</p>
                 <label>
                     <input type = "number" min = "1" max = "4" name="q4" value="a">
@@ -110,6 +110,8 @@
                     <input type = "number" min = "1" max = "4" name="q4" value="d">
                     d. Be responsible, dependable, and helpful to others.
                 </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
             </div>
             <div class = "box"  style="display:none">
                 <p>5. One thing I am really good at is:</p>
@@ -132,8 +134,6 @@
                     <input type = "number" min = "1" max = "4" name="q5" value="d">
                     d. Organizing.
                 </label>
-            </div>
-            <div class = "box"  style="display:none">
                 <p>6. Friends who know me best would say that I am:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q6" value="a">
@@ -154,6 +154,8 @@
                     <input type="number" min = "1" max = "4" name="q6" value="d">
                     d. Neat, prepared.
                 </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
             </div>
             <div class = "box"  style="display:none">
                 <p>7. My basic approach to life is:</p>
@@ -176,8 +178,6 @@
                     <input type="number" min = "1" max = "4" name="q7" value="d">
                     d. To plan for the future and make it as good as possible.
                 </label>
-            </div>
-            <div class = "box"  style="display:none">
                 <p>8. When I am feeling discouraged or “down in the dumps”:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q8" value="a">
@@ -198,6 +198,8 @@
                     <input type="number" min = "1" max = "4" name="q8" value="d">
                     d. I try to figure out what’s causing the problem and fix it.
                 </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
             </div>
             <div class = "box"  style="display:none">
                 <p>9. I feel good about myself when:</p>
@@ -220,8 +222,6 @@
                     <input type="number" min = "1" max = "4" name="q9" value="d">
                     d. I am appreciated or rewarded for things I do
                 </label>
-            </div>
-            <div class = "box"  style="display:none">
                 <p>10. Teachers at school who saw me when I wasn’t on my best behavior might describe me as:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q10" value="a">
@@ -242,6 +242,8 @@
                     <input type="number" min = "1" max = "4" name="q10" value="d">
                     d. Someone who wants things my way; dominant; worrying.
                 </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
             </div>
             <div class = "box"  style="display:none">
                 <p>11. Teachers at school (who like me and in whose class I do pretty well) would probably describe me as:</p>
@@ -264,9 +266,31 @@
                     <input type="number" min = "1" max = "4" name="q11" value="d">
                     d. Neat, organized, prepared, someone who does assignments and is a good student.
                 </label>
+                <button class="back">Back</button>
+                <button id="submitBTN" type="submit" name="submit">Submit</button>
             </div>
             
-            <button id="submitBTN" type="submit" name="submit">Submit</button>
-        </form>  
+            
+        </form> 
+        <script>
+            const buttons = document.querySelectorAll(".back, .next");
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    const currentQuestion = e.target.closest(".box");
+                    currentQuestion.style.display = "none";
+
+                    const nextQuestion = e.target.classList.contains("next")
+                        ? currentQuestion.nextElementSibling
+                        : currentQuestion.previousElementSibling;
+
+                    if (nextQuestion) {
+                        nextQuestion.style.display = "block";
+                    }
+                });
+            });
+        </script>
     </body>
 </html> 
