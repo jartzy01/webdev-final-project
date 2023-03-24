@@ -3,11 +3,13 @@ html, body {
     height: 100%;
 }
 form{
-    width: 800px;
-    height: 500px;
+    width: 1000px;
+    height: 635px;
     border: 5px solid;
 }
-
+h1{
+    color: #00d6b7;
+}
 body {
     display: flex;
     align-items: center;
@@ -35,13 +37,22 @@ body:before {
 }
 .box{
     padding-top: 10px;
-    padding-left: 14%;
-    padding-right: 14%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 #submitBTN {
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-bottom: 2%;
+    margin-left: 30px;
+    margin-top: -38PX;
+    display: block;
+    padding: 1em;
+    width: 70px;
+    background: linear-gradient(to right, #35c3c1, #00d6b7);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 .btn{
     margin-top: 4%;
@@ -57,4 +68,36 @@ input:invalid + span::after {
 input:valid + span::after {
     content: "✓";
     padding-left: 5px;
+}
+.back{
+    margin-left: -6%;
+    margin-top: 30px;
+    display: block;
+    padding: 1em;
+    width: 70px;
+    background: linear-gradient(to right, #35c3c1, #00d6b7);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.next{
+    margin-left: 30px;
+    margin-top: -38PX;
+    display: block;
+    padding: 1em;
+    width: 70px;
+    background: linear-gradient(to right, #35c3c1, #00d6b7);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+#q1{
+    margin-left: -6%;
+    margin-top: 30px;
 }
