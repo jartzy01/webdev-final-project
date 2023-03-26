@@ -3,17 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>Exporing your Colors</title>
-        <link rel="stylesheet" href="CSS/styleForm.css">
-        <script src="/JS/js-Form.js"></script>
-        <script src="/JS/uniqueValue.js"></script>
+        <link rel="stylesheet" href="form.css">
+        <script src="form.js"></script>
+        <script src="uniqueValue.js"></script>
     </head>
     <body>  
+        <h1>Exploring Your Colors</h1>
         <form>
             <div class = "explanation">
                 <label for ="name">Name:</label>
-                <input type="text" name="name" id="name"></input>
-                <h1>Exporing Your Colors</h1>
-                <p><a>
+                <input class= "namecolor" type="text" name="name" id="name"></input>
+                
+                <p class="description"><a>
                     Below are 11 incomplete sentences that describe people. Each sentence has four possible 
                     endings. Give four points to the phrase that is "most like you," three points to the phrase 
                     that is “next most like you,” two points to the next phrase, and one point to the phrase 
@@ -24,6 +25,7 @@
                 </a></p>
             </div>
             <div  class="box">
+                <!--QUESTION 1-->
                 <p>1. When I make decisions:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q1" value="a" required>
@@ -45,7 +47,12 @@
                     I take it seriously and always try to make the right decision.
                 </label>
                 <span class="validity"></span>
-            
+            </div>
+
+            <br>
+
+            <div class="box">
+                <!--QUESTION 2-->
                 <p>2. The best way for others to show me they care about me is to:</p>
                 <label>
                     <input type="number" min = "1" max = "4" name="q2" value="a">
@@ -66,6 +73,8 @@
                     <input type="number" min = "1" max = "4" name="q2" value="d">
                     Do what I want to do; not let me down or go back on their word.
                 </label>
+            </div>
+            
                 
                 <button class="next" id="q1">Next</button>
             </div>
@@ -293,4 +302,4 @@
             });
         </script>
     </body>
-</html> 
+</html>
