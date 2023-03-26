@@ -1,127 +1,399 @@
-html, body {
-    height: 100%;
-}
-form{
-    width: 1000px;
-    height: 635px;
-    padding: 2em;
-    position: relative;
-    background: rgba(0, 0, 0, 0.15);
-    
-}
-form:before{
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    height: 5px;
-    width: 100%;
-    background: linear-gradient(to right, #35c3c1, #00d6b7);
-}
-h1{
-    color: #00d6b7;
-}
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size:large;
-}
-body:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url(data:image/png;base64,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);
-    opacity: 0.3;
-}
-.explanation {
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: larger;
-    
-}
-.box{
-    padding-top: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 25px;
-    background-color: #000;
-    border-radius:25px;
-    color: #ffffff;
-    opacity: .5;
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Exploring Your Colors</title>
+        <link rel="stylesheet" href="form.css">
+        <script src="form.js"></script>
+        <script src="uniqueValue.js"></script>
+        <link rel="icon" href="https://www.freeiconspng.com/uploads/rainbow-with-cloud-png-0.png">
+    </head>
+    <body>  
+        <h1>Exploring Your Colors</h1>
+        <form>
+            <div class = "explanation">
+                <label for ="name">Name:</label>
+                <input class= "namecolor" type="text" name="name" id="name"></input>
+                
+                <p class="description"><a>
+                    Below are 11 incomplete sentences that describe people. Each sentence has four possible 
+                    endings. Give four points to the phrase that is "most like you," three points to the phrase 
+                    that is “next most like you,” two points to the next phrase, and one point to the phrase 
+                    that is “least like you.”
+                </a></p>
+                <p><a>
+                    Use the sentences below to describe your personality.
+                </a></p>
+            </div>
+            <div  class="box">
+                <!--QUESTION 1-->
+                <p>1. When I make decisions:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q1" value="a" required>
+                    I do it quickly and go with the first impressions.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q1" value="b" required>
+                    I think about it, consider the options and then decide.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q1" value="c" required>
+                    I listen to my feelings and consider how my decisions will affect others.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q1" value="d" required>
+                    I take it seriously and always try to make the right decision.
+                </label>
+                <span class="validity"></span>
+            </div>
 
-    
-}
-#submitBTN {
-    margin-left: 30px;
-    margin-top: -38PX;
-    display: block;
-    padding: 1em;
-    width: 70px;
-    background: linear-gradient(to right, #35c3c1, #00d6b7);
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.75em;
-    font-weight: 600;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-}
+            <br>
 
-
-input:invalid + span::after {
-    content: "✖";
-    padding-left: 5px;
-}
-
-input:valid + span::after {
-    content: "✓";
-    padding-left: 5px;
-}
-.back{
-    margin-left: -6%;
-    margin-top: 30px;
-    display: block;
-    padding: 1em;
-    width: 70px;
-    background: linear-gradient(to right, #35c3c1, #00d6b7);
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.75em;
-    font-weight: 600;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-}
-.next{
-    margin-left: 30px;
-    margin-top: -38PX;
-    display: block;
-    padding: 1em;
-    width: 70px;
-    background: linear-gradient(to right, #35c3c1, #00d6b7);
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.75em;
-    font-weight: 600;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-}
-.back:hover{
-    color: #000000;
-}
+            <div class="box">
+                <!--QUESTION 2-->
+                <p>2. The best way for others to show me they care about me is to:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q2" value="a">
+                    Do fun things with me.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q2" value="b">
+                    Give me dpace for myself.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q2" value="c">
+                    Spend time with me doing whatever.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q2" value="d">
+                    Do what I want to do; not let me down or go back on their word.
+                </label>
+            </div>
+                
+                <button class="next" id="q1">Next</button>
+            </div>
 
 
 
-#q1{
-    margin-left: -6%;
-    margin-top: 30px;
-}
 
 
+
+
+
+
+
+
+
+
+
+            <div class = "box"  style="display:none">
+                <!--QUESTION 3-->
+                <p>3. When I’m with my friends, I like to provide:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q3" value="a">
+                    The excitement; the fun; the jokes.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q3" value="b">
+                    Questions; answers; a logical way of looking at things.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q3" value="c">
+                    Concern for others; a lot of caring.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q3" value="d">
+                    The planning; a sense of security; a good standard.
+                </label>
+
+                <br>
+
+                <!--QUESTION 4-->
+                <p>4. I like to:</p>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q4" value="a">
+                    a. Act on a moment’s notice; do risky things.
+                </label>
+                <br/>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q4" value="b">
+                    b. Provide answers or give thought to people’s questions.
+                </label>
+                <br/>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q4" value="c">
+                    c. Help maintain a sense of harmony and togetherness.
+                </label>
+                <br/>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q4" value="d">
+                    d. Be responsible, dependable, and helpful to others.
+                </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class = "box"  style="display:none">
+
+                <!--QUESTION 5-->
+                <p>5. One thing I am really good at is:</p>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q5" value="a">
+                    a. Acting courageously.
+                </label>
+                <br/>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q5" value="b">
+                    b. Thinking.
+                </label>
+                <br/>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q5" value="c">
+                    c. Being sensitive.
+                </label>
+                <br/>
+                <label>
+                    <input type = "number" min = "1" max = "4" name="q5" value="d">
+                    d. Organizing.
+                </label>
+
+                <br>
+
+                <!--QUESTION 6-->
+                <p>6. Friends who know me best would say that I am:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q6" value="a">
+                    a. Competitive.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q6" value="b">
+                    b. Reserved, thoughtful.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q6" value="c">
+                    c. Emotional, friendly
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q6" value="d">
+                    d. Neat, prepared.
+                </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class = "box"  style="display:none">
+                <!--QUESTION 7-->
+                <p>7. My basic approach to life is:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q7" value="a">
+                    a. To take one day at a time and have fun.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q7" value="b">
+                    b. To figure out what life is all about.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q7" value="c">
+                    c. To help others and be happy and succeed.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q7" value="d">
+                    d. To plan for the future and make it as good as possible.
+                </label>
+
+                <br>
+
+                <!--QUESTION 8-->
+                <p>8. When I am feeling discouraged or “down in the dumps”:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q8" value="a">
+                    a. I often become rude, mad, or sometimes even mean.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q8" value="b">
+                    b. I withdraw, don’t talk very much, and try to think my way out of the problem.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q8" value="c">
+                    c. I feel emotional, am sad, and usually like to talk it over with someone close to me.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q8" value="d">
+                    d. I try to figure out what’s causing the problem and fix it.
+                </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class = "box"  style="display:none">
+                <!--QUESTION 9-->
+                <p>9. I feel good about myself when:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q9" value="a">
+                    a. I can do things that are difficult.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q9" value="b">
+                    b. I can solve problems or figure things out.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q9" value="c">
+                    c. I can help other people.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q9" value="d">
+                    d. I am appreciated or rewarded for things I do
+                </label>
+
+                <br>
+
+                <!--QUESTION 10-->
+                <p>10. Teachers at school who saw me when I wasn’t on my best behavior might describe me as:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q10" value="a">
+                    a. Rowdy or a little wild.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q10" value="b">
+                    b. Arrogant.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q10" value="c">
+                    c. Talkative.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q10" value="d">
+                    d. Someone who wants things my way; dominant; worrying.
+                </label>
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class = "box"  style="display:none">
+
+                <!--QUESTION 11-->
+                <p>11. Teachers at school (who like me and in whose class I do pretty well) would probably describe me as:</p>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q11" value="a">
+                    a. Charming, a natural leader, clever, someone who is fun to have around.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q11" value="b">
+                    b. Thoughtful, someone who has good answers, someone who likes to figure out problems.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q11" value="c">
+                    c. Nice, friendly, someone who gets along with other students and is helpful to the teacher and others.
+                </label>
+                <br/>
+                <label>
+                    <input type="number" min = "1" max = "4" name="q11" value="d">
+                    d. Neat, organized, prepared, someone who does assignments and is a good student.
+                </label>
+                <button class="back">Back</button>
+                <button id="submitBTN" type="submit" name="submit">Submit</button>
+            </div>
+            
+            
+
+
+
+
+
+        </form> 
+        <script>
+            const buttons = document.querySelectorAll(".back, .next");
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    const currentQuestion = e.target.closest(".box");
+                    currentQuestion.style.display = "none";
+
+                    const nextQuestion = e.target.classList.contains("next")
+                        ? currentQuestion.nextElementSibling
+                        : currentQuestion.previousElementSibling;
+
+                    if (nextQuestion) {
+                        nextQuestion.style.display = "block";
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
