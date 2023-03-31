@@ -1,5 +1,4 @@
 const buttons = document.querySelectorAll(".back, .next");
-
 buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
         e.preventDefault();
