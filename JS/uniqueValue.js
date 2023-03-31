@@ -1,19 +1,26 @@
-// Get all input elements with type="number"
 const inputs = document.querySelectorAll('input[type="number"]');
-
-// Loop through the inputs and add an event listener to each one
+const inputsByQuestion = {};
 inputs.forEach(input => {
-    input.addEventListener('input', () => {
-        // Get the name and value of the current input
-        const name = input.name;
-        const value = input.value;
-
-        // Loop through all the inputs again to check for duplicates
-        inputs.forEach(otherInput => {
-        // Check if the input has the same name and value as the current input
-            if (otherInput.name === name && otherInput !== input && otherInput.value === value) {
-            // If there is a duplicate, set the value of the current input to an empty string
-            input.value = '';
+    const name = input.name;
+    const questionNum = name.match(/q(\d+)/)[1];
+    if (!inputsByQuestion[questionNum]) {
+        inputsByQuestion[questionNum] = [];
+    }
+    inputsByQuestion[questionNum].push(input);
+});
+Object.keys(inputsByQuestion).forEach(questionNum => {
+    const inputs = inputsByQuestion[questionNum];
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            const name = input.name;
+            const value = input.value;
+            inputs.forEach(otherInput => {
+                if (otherInput !== input && otherInput.value === value && name !== otherInput.name) {
+                    input.value = '';
+                }
+            });
+            if (value < 1 || value > 4) {
+                input.value = '';
             }
         });
     });
