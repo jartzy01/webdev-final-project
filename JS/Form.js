@@ -9,7 +9,6 @@ buttons.forEach((button) => {
             const nextQuestion = e.target.classList.contains("next")
                 ? currentQuestion.nextElementSibling
                 : currentQuestion.previousElementSibling;
-
             if (nextQuestion) {
                 nextQuestion.style.display = "block";
             }
