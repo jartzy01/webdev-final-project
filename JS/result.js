@@ -1,16 +1,22 @@
-const aTotal = localStorage.getItem("aTotal");
-const bTotal = localStorage.getItem("bTotal");
-const cTotal = localStorage.getItem("cTotal");
-const dTotal = localStorage.getItem("dTotal");
+const aTotal = parseInt(localStorage.getItem("aTotal"));
+const bTotal = parseInt(localStorage.getItem("bTotal"));
+const cTotal = parseInt(localStorage.getItem("cTotal"));
+const dTotal = parseInt(localStorage.getItem("dTotal"));
 
-const maxTotal = Math.max(aTotal, bTotal, cTotal, dTotal);
+console.log(`A total: ${aTotal}`);
+console.log(`B total: ${bTotal}`);
+console.log(`C total: ${cTotal}`);
+console.log(`D total: ${dTotal}`);
+
+const totals = [aTotal, bTotal, cTotal, dTotal];
+const maxTotal = Math.max(...totals);
 
 if (maxTotal === aTotal) {
-    document.body.style.backgroundImage = "linear-gradient(to bottom right, #FFA07A, #FF8C00)";
+    document.body.style.background = "linear-gradient(to bottom right, orange, yellow) !important";
 } else if (maxTotal === bTotal) {
-    document.body.style.backgroundImage = "linear-gradient(to bottom right, #98FB98, #32CD32)";
+    document.body.style.background = "linear-gradient(to bottom right, green, lime) !important";
 } else if (maxTotal === cTotal) {
-    document.body.style.backgroundImage = "linear-gradient(to bottom right, #87CEEB, #1E90FF)";
+    document.body.style.background = "linear-gradient(to bottom right, blue, cyan) !important";
 } else if (maxTotal === dTotal) {
-    document.body.style.backgroundImage = "linear-gradient(to bottom right, #FFD700, #FFA500)";
+    document.body.style.background = "linear-gradient(to bottom right, gold, yellow) !important";
 }
