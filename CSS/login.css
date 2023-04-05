@@ -16,7 +16,6 @@ body {
     font-size: 1.5em;
 }
 body:before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -118,3 +117,41 @@ body:before {
 ::placeholder {
     color: #8f8f8f;
 }
+header {
+    background-color: #424242;
+}
+
+nav {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #424242;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #6e6e6e;
+}
+li a:focus {
+    outline: none;
+    transition: transform 0.15s ease;
+    transform: scale(1.1);
+}
+
