@@ -11,15 +11,6 @@ console.log(`D total: ${dTotal}`);
 const totals = [aTotal, bTotal, cTotal, dTotal];
 const maxTotal = Math.max(...totals);
 
-if (maxTotal === aTotal) {
-    document.body.style.background = "linear-gradient(to bottom right, orange, yellow) !important";
-} else if (maxTotal === bTotal) {
-    document.body.style.background = "linear-gradient(to bottom right, green, lime) !important";
-} else if (maxTotal === cTotal) {
-    document.body.style.background = "linear-gradient(to bottom right, blue, cyan) !important";
-} else if (maxTotal === dTotal) {
-    document.body.style.background = "linear-gradient(to bottom right, gold, yellow) !important";
-}
 let text = "";
 
 if (maxTotal === aTotal) {
@@ -35,5 +26,9 @@ if (maxTotal === aTotal) {
     text = "Are you...?Orange<br>Witty...Charming...Spontaneous?<br>Impulsive...Generous...Impactful?<br>Optimistic...Eager...Bold?<br>Physical...Immediate...Courageous?<br>At school...I learn by doing and experiencing, rather than by listening and reading.<br>I like being physically involved in the learning process and am motivated by my own natural competitive self and sense of fun.<br>Iam a natural performer.<br>I like doing tasks that allow me to be independent and free.";
     document.body.style.background = "linear-gradient(to bottom right, orange, yellow)";
 }
+const div = document.querySelector('.box');
+div.style.backgroundColor = 'rgba(0, 0, 0, 0.15)';
+div.style.padding = "10%";
+
 
 document.getElementById("text-container").innerHTML = text;
