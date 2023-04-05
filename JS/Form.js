@@ -46,10 +46,11 @@ function calculateTotals(event) {
             dTotal += value;
         }
     }
-    console.log(`A total: ${aTotal}`);
-    console.log(`B total: ${bTotal}`);
-    console.log(`C total: ${cTotal}`);
-    console.log(`D total: ${dTotal}`);
+    localStorage.setItem("aTotal", aTotal);
+    localStorage.setItem("bTotal", bTotal);
+    localStorage.setItem("cTotal", cTotal);
+    localStorage.setItem("dTotal", dTotal);
+    window.location.href = "result.html";
 }
 const form = document.querySelector("form");
 form.addEventListener("submit", calculateTotals);
