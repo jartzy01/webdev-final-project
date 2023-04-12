@@ -4,6 +4,14 @@ loginForm.addEventListener('submit', function (e) {
     const username = loginForm.querySelector('#username').value;
     const password = loginForm.querySelector('#password').value;
 
+    if (username === "user1" && password === "passAdmin01#") {
+        console.log('Login successful!');
+        window.location.href = 'form.html';
+    } else {
+        alert('Invalid username or password');
+    }
+
+
     fetch('users.json')
         .then(response => response.json())
         .then(users => {
@@ -13,7 +21,7 @@ loginForm.addEventListener('submit', function (e) {
                 console.log('Login successful!');
                 window.location.href = 'form.html';
             } else {
-                console.log('Invalid username or password');
+                alert('Invalid username or password');
             }
         })
         .catch(error => console.error(error));

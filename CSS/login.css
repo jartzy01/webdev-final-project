@@ -19,6 +19,7 @@ body {
 }
 .blue, .green, .gold, .orange {
     font-weight: bold;
+    font-size: larger;
 }
 body:before {
     position: absolute;
