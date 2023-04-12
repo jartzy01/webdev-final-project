@@ -2,7 +2,6 @@ const aTotal = parseInt(localStorage.getItem("aTotal"));
 const bTotal = parseInt(localStorage.getItem("bTotal"));
 const cTotal = parseInt(localStorage.getItem("cTotal"));
 const dTotal = parseInt(localStorage.getItem("dTotal"));
-const name =
 
 console.log(`A total: ${aTotal}`);
 console.log(`B total: ${bTotal}`);
