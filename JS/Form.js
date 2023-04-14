@@ -36,13 +36,20 @@ function calculateTotals(event) {
         const input = inputs[i];
         const name = input.getAttribute("name");
         const value = parseInt(input.value);
-        if (name === "q1a" || name === "q2a" || name === "q3a" || name === "q4a" || name === "q5a" || name === "q6a" || name === "q7a" || name === "q8a" || name === "q9a" || name === "q10a" || name === "q11a") {
+        if (name === "q1a" || name === "q2a" || name === "q3a" || name === "q4a" || name === "q5a" || name === "q6a" ||
+            name === "q7a" || name === "q8a" || name === "q9a" || name === "q10a" || name === "q11a") {
             aTotal += value;
-        } else if (name === "q1b" || name === "q2b" || name === "q3b" || name === "q4b" || name === "q5b" || name === "q6b" || name === "q7b" || name === "q8b" || name === "q9b" || name === "q10b" || name === "q11b") {
+        } else if (name === "q1b" || name === "q2b" || name === "q3b" || name === "q4b" || name === "q5b"
+            || name === "q6b" || name === "q7b" || name === "q8b" || name === "q9b" || name === "q10b" ||
+            name === "q11b") {
             bTotal += value;
-        } else if (name === "q1c" || name === "q2c" || name === "q3c" || name === "q4c" || name === "q5c" || name === "q6c" || name === "q7c" || name === "q8c" || name === "q9c" || name === "q10c" || name === "q11c") {
+        } else if (name === "q1c" || name === "q2c" || name === "q3c" || name === "q4c" || name === "q5c"
+            || name === "q6c" || name === "q7c" || name === "q8c" || name === "q9c" || name === "q10c"
+            || name === "q11c") {
             cTotal += value;
-        } else if (name === "q1d" || name === "q2d" || name === "q3d" || name === "q4d" || name === "q5d" || name === "q6d" || name === "q7d" || name === "q8d" || name === "q9d" || name === "q10d" || name === "q11d") {
+        } else if (name === "q1d" || name === "q2d" || name === "q3d" || name === "q4d"
+            || name === "q5d" || name === "q6d" || name === "q7d" || name === "q8d" || name === "q9d"
+            || name === "q10d" || name === "q11d") {
             dTotal += value;
         }
     }
