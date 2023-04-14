@@ -2,6 +2,7 @@
     max-width: 1000px;
     position: relative;
     margin: auto;
+    background: linear-gradient(135deg, rgba(36, 46, 77, 0.9), rgba(137, 126, 121, 0.9));
     }
 .header{
     background-color: green;
