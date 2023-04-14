@@ -46,10 +46,13 @@ function calculateTotals(event) {
             dTotal += value;
         }
     }
+
+    const name = document.getElementsByName("name")[0].value;
     localStorage.setItem("aTotal", aTotal);
     localStorage.setItem("bTotal", bTotal);
     localStorage.setItem("cTotal", cTotal);
     localStorage.setItem("dTotal", dTotal);
+    localStorage.setItem("name", name);
     window.location.href = "result.html";
 }
 const form = document.querySelector("form");
